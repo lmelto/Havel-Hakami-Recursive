@@ -25,38 +25,38 @@ def front_elim(number, input_list):
 
 
 def rand_list():
-    list1 = []
+    value_list = []
     for _ in range(10):
-        list1.append(random.randint(0, 10))
-    return list1
+        value_list.append(random.randint(0, 10))
+    return value_list
 
 
-def run_default(list1):
+def run_default(value_list):
 
-    print(list1)
+    print(value_list)
 
-    list1 = elim_zeros(list1)
-    print(list1)
+    value_list = elim_zeros(value_list)
+    print(value_list)
 
-    if len(list1) == 0:
+    if len(value_list) == 0:
         print("Pass!")
         return True
 
-    descend_sort(list1)
-    print(list1)
+    descend_sort(value_list)
+    print(value_list)
 
-    num = list1.pop(0)
-    print(list1)
+    num = value_list.pop(0)
+    print(value_list)
 
-    if num > len(list1):
+    if num > len(value_list):
         print("Failed.")
         return False
 
-    list1 = front_elim(num, list1)
-    print(list1)
+    value_list = front_elim(num, value_list)
+    print(value_list)
 
-    run_default(list1)
+    run_default(value_list)
 
 
-list1 = rand_list()
-run_default(list1)
+value_list = rand_list()
+run_default(value_list)
